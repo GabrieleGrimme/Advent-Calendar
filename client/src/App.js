@@ -1,8 +1,8 @@
 
-// import styled from 'styled-components/macro';
+import styled from 'styled-components/macro';
 
 import { useEffect, useState } from 'react';
-
+import PokemonLogo from './images/pokemon-logo.svg';
 function App() {
   const [serverMessage, setServerMessage] = useState('');
 
