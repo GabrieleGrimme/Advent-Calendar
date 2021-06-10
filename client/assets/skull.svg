@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="322" height="43.5" viewBox="0 0 322 43.5">
+  <g id="Gruppe_3" data-name="Gruppe 3" transform="translate(-24 -317.5)">
+    <g id="Rechteck_7" data-name="Rechteck 7" transform="translate(24 326)" fill="#6e1848" stroke="#707070" stroke-width="1">
+      <rect width="322" height="35" rx="11" stroke="none"/>
+      <rect x="0.5" y="0.5" width="321" height="34" rx="10.5" fill="none"/>
+    </g>
+    <text id="Antwort" transform="translate(215 350)" fill="#fffdfd" stroke="rgba(0,0,0,0)" stroke-width="1" font-size="16" font-family="Skia"><tspan x="0" y="0">Antwort</tspan></text>
+    <path id="Icon_awesome-skull" data-name="Icon awesome-skull" d="M18,0C8.058,0,0,7.052,0,15.75A15.067,15.067,0,0,0,6.645,27.963a2.211,2.211,0,0,1,.949,2.1L6.933,34.72A1.116,1.116,0,0,0,8.037,36H13.5V32.063a.564.564,0,0,1,.563-.562h1.125a.564.564,0,0,1,.563.563V36h4.5V32.063a.564.564,0,0,1,.563-.562h1.125a.564.564,0,0,1,.563.563V36h5.463a1.116,1.116,0,0,0,1.1-1.28l-.661-4.655a2.2,2.2,0,0,1,.949-2.1A15.067,15.067,0,0,0,36,15.75C36,7.052,27.942,0,18,0ZM11.25,22.5a4.5,4.5,0,1,1,4.5-4.5A4.5,4.5,0,0,1,11.25,22.5Zm13.5,0a4.5,4.5,0,1,1,4.5-4.5A4.5,4.5,0,0,1,24.75,22.5Z" transform="translate(29 318)" stroke="#fff" stroke-width="1"/>
+  </g>
+</svg>
