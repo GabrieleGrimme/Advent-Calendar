@@ -1,0 +1,33 @@
+{
+"quiz": [
+        {
+        "question": "Welchen Beruf übte Ernst Horn aus, als er Deine Lakaien gründete?",
+        "answerA": "Regisseur",
+        "answerB": "Kapellmeister",
+        "answerC": "Schauspieler",
+        "answerD": "Cellist",
+        "rightanswer": "answerB",
+        "id": "1"
+        },
+        {
+        "question": "Welches Bandprojekt gründete Bruno Kramm?",
+        "answerA": "Dein Ego",
+        "answerB": "Das Ich",
+        "answerC": "The Me",
+        "answerD": "Me, Myself and I",
+        "rightanswer": "answerB",
+        "id": "2"
+        },
+        {
+        "question": "Wie hieß die Sängerin, mit der Sister of Mercy kooperierte?",
+        "answerA": "Ofra Haza",
+        "answerB": "Marlene Dietrich",
+        "answerC": "Nena",
+        "answerD": "Edith Piaf",
+        "rightanswer": "answerA",
+        "id": "3"
+        }
+    ]
+}
+
+  

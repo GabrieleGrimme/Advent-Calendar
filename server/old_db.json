@@ -1,0 +1,78 @@
+{
+    "quiz": [
+            {
+            "question": "Welchen Beruf übte Ernst Horn aus, als er Deine Lakaien gründete?",
+            "answerA": "Regisseur",
+            "answerB": "Kapellmeister",
+            "answerC": "Schauspieler",
+            "answerD": "Cellist",
+            "rightanswer": "answerB",
+            "id": "1"
+            },
+            {
+            "question": "Welches Bandprojekt gründete Bruno Kramm?",
+            "answerA": "Dein Ego",
+            "answerB": "Das Ich",
+            "answerC": "The Me",
+            "answerD": "Me, Myself and I",
+            "rightanswer": "answerB",
+            "id": "2"
+            },
+            {
+            "question": "Wie hieß die Sängerin, mit der Sister of Mercy kooperierte?",
+            "answerA": "Ofra Haza",
+            "answerB": "Marlene Dietrich",
+            "answerC": "Nena",
+            "answerD": "Edith Piaf",
+            "rightanswer": "answerA",
+            "id": "3"
+            }
+        ],
+    "adventgift": [
+            {
+            "giftA": "CD Deine Lakaien: Dual",
+            "giftB": "CD Felix Marc",
+            "day": "1"
+            },
+            {
+            "giftA": "CD Croona: Ascend",
+            "giftB": "Shirt DME-Radio",
+            "giftC": "Buttons and Pen DME-Radio",
+            "day": "2"
+            },
+            {
+            "giftA": "CD Scheuber: Numb",
+            "giftB": "Book The Cure",
+            "day": "14"
+            },
+            {
+            "giftA": "CD Omnimar: Darkpop",
+            "giftB": "Autograph, Maria from Omnimar",
+            "day": "23"
+            }
+        ],
+    "adventgiftA": [
+            {
+            "gift": "CD Deine Lakaien: Dual",
+            "day": "1"
+            },
+            {
+            "gift": "CD Felix Marc",
+            "day": "1"
+            },
+            {
+            "gift": "CD Croona: Ascend",
+            "day": "2"
+            },
+            {
+            "gift": "Shirt DME-Radio",
+            "day": "2"
+            },
+            {
+            "gift": "Buttons and Pen DME-Radio",
+            "day": "2"
+            }
+        ]
+    }
+    
+      

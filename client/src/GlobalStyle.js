@@ -8,7 +8,7 @@ export default createGlobalStyle`
 :root {
     --primary: rgb(0, 0, 0); // black
     --secondary: rgb(255, 255, 255); //white
-    --third: rgb(210, 68, 68) // red
+    --third: rgb(210, 68, 68); // red
     --fourth: rgb(238, 209, 186); //nude
     --fifth: rgb(110, 24, 72); //purple
 }

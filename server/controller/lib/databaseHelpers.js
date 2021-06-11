@@ -14,7 +14,7 @@ export function saveToDatabase(database, databaseFile = 'db.json') {
 }
 
 
-export function loadFromDatabase(databaseFile = 'db.json') {
+export function loadFromDatabase(databaseFile = 'dbQuiz.json') {
     try {
         const database = fs.readFileSync(databaseFile);
         return JSON.parse(database);
