@@ -4,8 +4,8 @@ import styled from 'styled-components/macro';
 
 // import { useEffect, useState } from 'react';
 //import DMELogo from './assets/dme_logo_klein.jpg';
-//import Tree from './assets/tree.svg';
-//import Skull from './assets/skull.svg';
+import Tree from './assets/tree.svg';
+import Skull from './assets/skull.svg';
 
 /* const advent = 
         { 1: ['CD Deine Lakaien: Dual', 'CD Felix Marc'],
@@ -24,71 +24,140 @@ function App() {
             <audio controls id="audioPlayer">
             <source src="https://server4.streamserver24.com:8080/proxy/darkmelo?mp=%2Fstream" type="audio/mpeg" />
             </audio>
-          <article>DME-Radio einschalten, Quizfrage beantworten und
+          <article>
+          <img src={Skull} alt="Skull" />
+            DME-Radio einschalten, Quizfrage beantworten und
             und tolle Preise gewinnen!
           </article>
-          <QuizQuestion>Hier steht die Quizfrage!</QuizQuestion>
+          
+          <Question>Hier steht die Quizfrage!</Question>
+          
           <article>
-            <ul>
-              <QuizAnswer>Answer1</QuizAnswer>
-          </ul>
+            <Liste>
+              <Answer> Answer1 </Answer>
+            </Liste>
           </article>
-          <h2>Heute verlosen wir:</h2>
-          <article>
-            <ul>
-              <li>CD Deine Lakaien</li>
-              <li>Fanshirts</li>
-              <li>Sticker</li>
-            </ul>
-          </article>
-          <div>
-          <label htmlfor="name"> Dein Name </label>
-            <input 
+          
+          <H2>Heute verlosen wir:</H2>
+          
+          <ItemsWrapper>
+            <div>
+              <img src={Tree} alt="Tree" />
+            </div>
+            <div>
+              <Liste>
+                <Items>CD Deine Lakaien</Items>
+                <Items>Fanshirts</Items>
+                <Items>Sticker</Items>
+              </Liste>
+              </div>
+          </ItemsWrapper>
+
+          <InputField>
+          <Label htmlfor="name">Name: </Label>
+            <Input 
               type="text" 
               name="name" 
+              placeholder="Dein Name: "
             />
-            <label htmlFor="email"> Deine Email </label>
-            <input 
+            <Label htmlFor="email">Email: </Label>
+            <Input 
               type="text" 
               name="email" 
+              placeholder="Deine Email:"
             />
-          </div>
-        <Button>Send</Button>
-        <Button type="reset">Cancel</Button>
-    </div>
-  </Wrapper>
+          </InputField>
+          
+           <Buttons>
+              <Button> Send </Button>
+              <Button type="reset"> Cancel </Button>
+            </Buttons>
+      
+        </Wrapper>
+      </div>
     )
 }
 
 const Wrapper = styled.section`
+  border: 1px solid green;
   display: grid;
+  margin: 0.5rem;
+  padding: 1.2rem;
   place-items: center;
+  width: 400px;
 `;
 
-const QuizQuestion = styled.article`
-  background: var(--primary);
-  border-radius: 5rem;
-  color: var(--secondary);
+const H2 = styled.h2`
+  color: var(--third);
+  font-size: 2rem;
+  margin: 0 auto;
 `;
 
-const QuizAnswer = styled.li`
+const Question = styled.article`
+  background: var(--secondary);
+  border: 1px solid var(--third);
+  border-radius: 0.5rem;
+  color: var(--primary);
+  margin-top: 1.5rem;
+  padding: 0.5rem;
+`;
+
+const Liste = styled.ul`
+  list-style: none;
+  padding-left: 0;
+`;
+
+const Answer = styled.li`
   background: var(--fourth);
-  border-radius: 3rem;
+  border-radius: 0.5rem;
   color: var(--secondary);
+  padding: 0.5rem;
 `;
 
+const InputField = styled.article`
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  list-style: none;
+  padding: 0.7rem;
+`;
 
-const QuizAnswer = styled.li`
-  background: var(--fourth);
-  border-radius: 3rem;
+const Label = styled.label`
   color: var(--secondary);
+  font-size: 0.8rem;
+`;
+
+const Input = styled.input`
+  border-radius: 0.5rem;
+`;
+
+const Items = styled.li`
+  color: var(--third);
+  font-size: 1.5rem;
+  list-style-type: none;
+  margin-top: 0;
+  padding-top: 0;
+`;
+
+const ItemsWrapper = styled.article`
+border: 1px solid green;
+  display: flex;
+  margin: 0 auto;
+  padding: 0.2rem;
+`;
+
+const Buttons = styled.section`
+  gap: 6rem;
+  display: flex;
 `;
 
 const Button = styled.button`
-  border-radius: 3rem;
-  border: 1px solid var(--fifth);
-  background: var(--secondary);
+  background: none;
+  border: none;
+  color: var(--third);
   cursor: pointer;
+  font-weight: bolder;
+  font-size: 1.0rem;
   padding: 0.2rem;
 `;
 
