@@ -185,30 +185,4 @@ const Button = styled.button`
   padding: 0.2rem;
 `;
 
-/*
-const BooksButtonStyled = styled(BooksButton)`
-  .active & path {
-    fill: var(--tertiary);
-    stroke: none;
-  }
-`;
-Dabei müsstet ihr im SVG gucken, ob ihr einen path, ein rect oder was auch immer verändern müsst. Btw. so wie ich es verstanden habe ersetzt “title” bei SVGs das “alt” Tag (für die accessibility).
-*/
-
 export default App;
-
-/* aus dem simple node server
-const fs = require('fs'); //CommonJS <> ES6 Modules (import fs from 'fs')
-
-const name = 'Bulbasaur';
-
-fs.writeFile('pokemon.txt', 'Pokemon #1 ' + name, (error) =>  { // schreibe in den text, 
-    if (error) {
-        console.log(error.message);// wird ein error Objekt übergeben
-        return false;
-}
-
-console.log('File was written.');
-
-});
-*/
