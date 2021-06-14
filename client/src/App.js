@@ -3,7 +3,7 @@ import styled from 'styled-components/macro';
 //import loadFromDatabase from '../controller/lib/databaseHelpers';
 
 // import { useEffect, useState } from 'react';
-//import DMELogo from './assets/dme_logo_klein.jpg';
+import DMELogo from './assets/dme_logo2_klein.jpg';
 import Tree from './assets/tree.svg';
 import Skull from './assets/skull.svg';
 
@@ -21,20 +21,30 @@ function App() {
     return (
       <div className="App">
         <Wrapper> 
+          <ImgWrapper>
+            <a href="https://www.dm-entertainment.de/dme-radio">
+              <Logo src={DMELogo} alt="Back to DME-Radio Website" />
+            </a>
+            <H2> Advent Calendar </H2>
+          </ImgWrapper>
             <audio controls id="audioPlayer">
             <source src="https://server4.streamserver24.com:8080/proxy/darkmelo?mp=%2Fstream" type="audio/mpeg" />
             </audio>
           <article>
-          <img src={Skull} alt="Skull" />
             DME-Radio einschalten, Quizfrage beantworten und
             und tolle Preise gewinnen!
           </article>
           
-          <Question>Hier steht die Quizfrage!</Question>
+          <Question>Hier steht die Quizfrage! Hier steht die Quizfrage!
+            Hier steht die Quizfrage!
+          </Question>
           
           <article>
             <Liste>
               <Answer> Answer1 </Answer>
+              <Answer> Answer2 </Answer>
+              <Answer> Answer3 </Answer>
+              <Answer> Answer4 </Answer>
             </Liste>
           </article>
           
@@ -79,12 +89,24 @@ function App() {
 }
 
 const Wrapper = styled.section`
-  border: 1px solid green;
   display: grid;
   margin: 0.5rem;
   padding: 1.2rem;
   place-items: center;
   width: 400px;
+`;
+
+const ImgWrapper = styled.div`
+  display: flex;
+  gap: 6rem;
+  justify-content: space-between;
+  flex-wrap: nowrap;
+  padding: 0.7rem;
+`;
+
+const Logo = styled.img`
+  width: 100px;
+  margin: 0 auto;
 `;
 
 const H2 = styled.h2`
@@ -95,7 +117,7 @@ const H2 = styled.h2`
 
 const Question = styled.article`
   background: var(--secondary);
-  border: 1px solid var(--third);
+  border: 1px dotted var(--third);
   border-radius: 0.5rem;
   color: var(--primary);
   margin-top: 1.5rem;
@@ -111,7 +133,9 @@ const Answer = styled.li`
   background: var(--fourth);
   border-radius: 0.5rem;
   color: var(--secondary);
-  padding: 0.5rem;
+  list-style: url(${Skull});
+  margin: 0.5rem;
+  padding: 0.2rem;
 `;
 
 const InputField = styled.article`
@@ -134,13 +158,13 @@ const Input = styled.input`
 const Items = styled.li`
   color: var(--third);
   font-size: 1.5rem;
-  list-style-type: none;
+  list-style: none;
   margin-top: 0;
   padding-top: 0;
 `;
 
 const ItemsWrapper = styled.article`
-border: 1px solid green;
+  align-items: flex-end;
   display: flex;
   margin: 0 auto;
   padding: 0.2rem;
