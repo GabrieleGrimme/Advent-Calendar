@@ -1,188 +1,56 @@
 
 import styled from 'styled-components/macro';
+import HeaderNavigation from './HeaderNavigation';
+import Home from './pages/Home';
+import QuizForm from './pages/Quizform';
+import {Switch, Route} from 'react-router-dom';
 //import loadFromDatabase from '../controller/lib/databaseHelpers';
-
-// import { useEffect, useState } from 'react';
+import { useEffect, useState } from 'react';
 import DMELogo from './assets/dme_logo2_klein.jpg';
 import Tree from './assets/tree.svg';
 import Skull from './assets/skull.svg';
 
-/* const advent = 
-        { 1: ['CD Deine Lakaien: Dual', 'CD Felix Marc'],
-          2: ['CD Croona: Ascend', 'Shirt DME-Radio', 'Buttons and Pen DME-Radio'],
-          3: ['CD Scheuber: Numb', 'Book The Cure'],
-          4: ['CD Omnimar: Darkpop', 'Autograph, Maria from Omnimar'],
-          5: ['Poster von Agonoize', '1 Mini-Headphone']
-        };
-*/
 
 function App() {
 
     return (
       <div className="App">
-        <Wrapper> 
-          <ImgWrapper>
+            <HeadWrapper>       
             <a href="https://www.dm-entertainment.de/dme-radio">
               <Logo src={DMELogo} alt="Back to DME-Radio Website" />
             </a>
-            <H2> Advent Calendar </H2>
-          </ImgWrapper>
-            <audio controls id="audioPlayer">
-            <source src="https://server4.streamserver24.com:8080/proxy/darkmelo?mp=%2Fstream" type="audio/mpeg" />
-            </audio>
-          <article>
-            DME-Radio einschalten, Quizfrage beantworten und
-            und tolle Preise gewinnen!
-          </article>
-          
-          <Question>Hier steht die Quizfrage! Hier steht die Quizfrage!
-            Hier steht die Quizfrage!
-          </Question>
-          
-          <article>
-            <Liste>
-              <Answer> Answer1 </Answer>
-              <Answer> Answer2 </Answer>
-              <Answer> Answer3 </Answer>
-              <Answer> Answer4 </Answer>
-            </Liste>
-          </article>
-          
-          <H2>Heute verlosen wir:</H2>
-          
-          <ItemsWrapper>
-            <div>
-              <img src={Tree} alt="Tree" />
-            </div>
-            <div>
-              <Liste>
-                <Items>CD Deine Lakaien</Items>
-                <Items>Fanshirts</Items>
-                <Items>Sticker</Items>
-              </Liste>
-              </div>
-          </ItemsWrapper>
-
-          <InputField>
-          <Label htmlfor="name">Name: </Label>
-            <Input 
-              type="text" 
-              name="name" 
-              placeholder="Dein Name: "
-            />
-            <Label htmlFor="email">Email: </Label>
-            <Input 
-              type="text" 
-              name="email" 
-              placeholder="Deine Email:"
-            />
-          </InputField>
-          
-           <Buttons>
-              <Button> Send </Button>
-              <Button type="reset"> Cancel </Button>
-            </Buttons>
-      
-        </Wrapper>
+              <HeaderNavigation />
+                <Switch>
+                  <Route exact path="/">
+                    <div>
+                      <Home />
+                    </div>
+                  </Route>
+                  <Route path="/Quizform">
+                    <div>
+                      <QuizForm />
+                    </div>
+                  </Route>
+                </Switch>
+              </HeadWrapper>
       </div>
     )
 }
 
-const Wrapper = styled.section`
+
+
+const HeadWrapper = styled.header`
+background: var(--primary);
   display: grid;
   margin: 0.5rem;
   padding: 1.2rem;
   place-items: center;
-  width: 400px;
-`;
-
-const ImgWrapper = styled.div`
-  display: flex;
-  gap: 6rem;
-  justify-content: space-between;
-  flex-wrap: nowrap;
-  padding: 0.7rem;
+  text-align: center;
 `;
 
 const Logo = styled.img`
   width: 100px;
   margin: 0 auto;
-`;
-
-const H2 = styled.h2`
-  color: var(--third);
-  font-size: 2rem;
-  margin: 0 auto;
-`;
-
-const Question = styled.article`
-  background: var(--secondary);
-  border: 1px dotted var(--third);
-  border-radius: 0.5rem;
-  color: var(--primary);
-  margin-top: 1.5rem;
-  padding: 0.5rem;
-`;
-
-const Liste = styled.ul`
-  list-style: none;
-  padding-left: 0;
-`;
-
-const Answer = styled.li`
-  background: var(--fourth);
-  border-radius: 0.5rem;
-  color: var(--secondary);
-  list-style: url(${Skull});
-  margin: 0.5rem;
-  padding: 0.2rem;
-`;
-
-const InputField = styled.article`
-  display: flex;
-  flex-direction: column;
-  flex-wrap: wrap;
-  list-style: none;
-  padding: 0.7rem;
-`;
-
-const Label = styled.label`
-  color: var(--secondary);
-  font-size: 0.8rem;
-`;
-
-const Input = styled.input`
-  border-radius: 0.5rem;
-`;
-
-const Items = styled.li`
-  color: var(--third);
-  font-size: 1.5rem;
-  list-style: none;
-  margin-top: 0;
-  padding-top: 0;
-`;
-
-const ItemsWrapper = styled.article`
-  align-items: flex-end;
-  display: flex;
-  margin: 0 auto;
-  padding: 0.2rem;
-`;
-
-const Buttons = styled.section`
-  gap: 6rem;
-  display: flex;
-`;
-
-const Button = styled.button`
-  background: none;
-  border: none;
-  color: var(--third);
-  cursor: pointer;
-  font-weight: bolder;
-  font-size: 1.0rem;
-  padding: 0.2rem;
 `;
 
 export default App;
