@@ -1,9 +1,10 @@
 import styled from 'styled-components/macro';
+import AdventItems from './Adventitems';
 //import loadFromDatabase from '../controller/lib/databaseHelpers';
 import { useEffect, useState } from 'react';
 import Tree from '../assets/tree.svg';
 import Skull from '../assets/skull.svg';
-
+/*
 const adventItems = 
         { 1: ['CD Deine Lakaien: Dual', 'CD Felix Marc'],
           2: ['CD Croona: Ascend', 'Shirt DME-Radio', 'Buttons and Pen DME-Radio'],
@@ -11,7 +12,7 @@ const adventItems =
           4: ['CD Omnimar: Darkpop', 'Autograph, Maria from Omnimar'],
           5: ['Poster von Agonoize', '1 Mini-Headphone']
         };
-
+*/
 
 export default function QuizForm() {
   
@@ -47,11 +48,9 @@ export default function QuizForm() {
               <img src={Tree} alt="Tree" />
             </div>
             <div>
-              <Liste>
-                <Items>CD Deine Lakaien</Items>
-                <Items>Fanshirts</Items>
-                <Items>Sticker</Items>
-              </Liste>
+              
+                <AdventItems />
+            
               </div>
           </ItemsWrapper>
 
@@ -139,13 +138,7 @@ const Input = styled.input`
   border-radius: 0.5rem;
 `;
 
-const Items = styled.li`
-  color: var(--third);
-  font-size: 1.5rem;
-  list-style: none;
-  margin-top: 0;
-  padding-top: 0;
-`;
+
 
 const ItemsWrapper = styled.article`
   align-items: flex-end;

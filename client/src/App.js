@@ -46,6 +46,7 @@ background: var(--primary);
   padding: 1.2rem;
   place-items: center;
   text-align: center;
+  width: 375px;
 `;
 
 const Logo = styled.img`
