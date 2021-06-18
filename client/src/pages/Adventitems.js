@@ -6,14 +6,25 @@ import initialAdvent from './Items';
 
 export default function QuizItems(props) {
 
-  const [quizItem, setQuizItem] = useState(initialAdvent);
+//const [quizItem, setQuizItem] = useState(initialAdvent);
 
-  const { id, item, day } = props;
+const { id, item, day } = props;
+
+const td = new Date(); // aktuelles Datum und aktuelle Zeit
+const today = td.getDate(); // aktueller Tag 
 
 
-  const showQuizItems = initialAdvent.map(quizGift => 
-      <Items key={quizGift.id}>{quizGift.item}</Items>  
-      )
+
+  const showQuizItems = initialAdvent.map(quizItem => {
+    if (today === quizItem.id) {
+      <Items key={quizItem.id}>
+        {quizItem.id} 
+        {quizItem.item}
+      </Items> 
+  } else  {
+      <Items> Heute gibt es kein Geschenk!
+      </Items> 
+  } } )
 
   return (
     <Liste>
@@ -24,9 +35,9 @@ export default function QuizItems(props) {
 
 // Fehlerprophylaxe für Devs und Dokumentation
 QuizItems.propTypes = {
-  id: PropTypes.number,
+  id: PropTypes.string,
   item: PropTypes.string,
-  day: PropTypes.number
+  day: PropTypes.string
 };
 
 const Liste = styled.ul`

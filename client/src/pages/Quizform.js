@@ -99,7 +99,6 @@ const H2 = styled.h2`
 
 const Question = styled.article`
   background: var(--fourth);
-  border: 5px dotted var(--fifth);
   border-radius: 0.5rem;
   color: var(--primary);
   margin-top: 1.5rem;
