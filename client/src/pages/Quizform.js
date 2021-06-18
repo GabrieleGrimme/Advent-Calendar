@@ -15,6 +15,7 @@ const adventItems =
 */
 
 export default function QuizForm() {
+
   
     return (
       <div className="App">
@@ -60,6 +61,12 @@ export default function QuizForm() {
               type="text" 
               name="name" 
               placeholder="Dein Name: "
+            />
+            <Label htmlfor="vorname">Vorame: </Label>
+            <Input 
+              type="text" 
+              name="vorname" 
+              placeholder="Dein Vorname: "
             />
             <Label htmlFor="email">Email: </Label>
             <Input 

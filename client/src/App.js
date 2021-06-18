@@ -12,6 +12,25 @@ import Skull from './assets/skull.svg';
 
 
 function App() {
+ 
+  const [quizs, setQuizs] = useState([]);
+  const [users, setUsers] = useState([]);
+
+  async function addUser(user) {
+    try {
+      const result = await fetch('/users', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(user),
+      });
+      const userSaved = await result.json();
+      setUsers([...users, userSaved]);
+    } catch (error) {
+      console.error(error);
+    }
+  }
 
     return (
       <div className="App">
@@ -28,7 +47,7 @@ function App() {
                   </Route>
                   <Route path="/Quizform">
                     <div>
-                      <QuizForm />
+                      <QuizForm onAddUser={addUser} />
                     </div>
                   </Route>
                 </Switch>
