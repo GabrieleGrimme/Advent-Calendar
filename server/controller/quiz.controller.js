@@ -1,7 +1,7 @@
 import Quiz from '../models/quiz.model.js';
 
-function getQuizs(req, res) {
-  Quiz.find().then((quizs) => res.json(quizs));
+function getQuizzes(req, res) {
+  Quiz.find().then((quizzes) => res.json(quizzes));
 }
 
 function getQuizId(req, res) {
@@ -15,12 +15,12 @@ function getQuizId(req, res) {
 
 function postQuiz(req, res) {
   const quiz = new Quiz({
-    name: req.body.name,
-    email: req.body.email,
-    phone: req.body.phone,
-    street: req.body.address,
-    zip: req.body.zip,
-    city: req.body.city,
+    question: req.body.question,
+    answerA: req.body.answerA,
+    answerB: req.body.answerB,
+    answerC: req.body.answerC,
+    answerD: req.body.answerD,
+    rightanswer: req.body.rightanswer,
   });
   quiz
     .save()
@@ -57,7 +57,7 @@ function deleteQuiz(req, res) {
 }
 
 export {
-  getQuizs,
+  getQuizzes,
   getQuizId,
   postQuiz,
   updateQuiz,

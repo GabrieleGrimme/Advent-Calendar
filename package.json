@@ -4,10 +4,14 @@
   "description": "",
   "main": "index.js",
   "scripts": {
+    "build": "cd l/client && npm run build",
     "test": "echo \"Error: no test specified\" && exit 1",
     "client": "cd ./client && npm start",
+    "cy:open": "cd ./client&& npm run cy:open",
     "server": "cd ./server && npm start",
-    "dev": "concurrently \"npm run server\" \"npm run client\""
+    "dev": "concurrently \"npm run server\" \"npm run client\"",
+    "start": "node ./server/server.js",
+    "postinstall": "cd ./client && npm install && cd ../server && npm install"
   },
   "repository": {
     "type": "git",

@@ -1,7 +1,8 @@
 import styled from 'styled-components/macro';
-import AdventItems from './Adventitems';
 //import loadFromDatabase from '../controller/lib/databaseHelpers';
 import { useEffect, useState } from 'react';
+
+import AdventItems from './AdventItems';
 import Tree from '../assets/tree.svg';
 import Skull from '../assets/skull.svg';
 /*
@@ -14,13 +15,40 @@ const adventItems =
         };
 */
 
-export default function QuizForm() {
+export default function QuizForm({ onAddUser }) {
+  
+  const initialUser = {
+    name: '',
+    vorname: '',
+    email: '',
+    datum: '',
+  };
+  
+  const [user, setUser] = useState(initialUser);
+  const [isError, setIsError] = useState(false);
 
   
+  function handleFormSubmit(event) {
+    event.preventDefault();
+      onAddUser(user);
+      setUser(initialUser);
+      setIsError(false);
+    } 
+  
+
+    function updateUser(event) {
+      const fieldName = event.target.name;
+      let fieldValue = event.target.value;
+  
+      setUser({ ...user, [fieldName]: fieldValue });
+    }
+  
+
     return (
       <div className="App">
         <Wrapper> 
           <main>
+          <form onSubmit={handleFormSubmit}>
               <audio controls id="audioPlayer">
               <source src="https://server4.streamserver24.com:8080/proxy/darkmelo?mp=%2Fstream" type="audio/mpeg" />
               </audio>
@@ -28,7 +56,7 @@ export default function QuizForm() {
              DME-Radio einschalten, Quizfrage beantworten und
              und tolle Preise gewinnen!
             </article>
-          
+
             <Question>Hier steht die Quizfrage! Hier steht die Quizfrage!
             Hier steht die Quizfrage!
             </Question>
@@ -61,33 +89,40 @@ export default function QuizForm() {
               type="text" 
               name="name" 
               placeholder="Dein Name: "
+              onChange={updateUser}
+              value={user.name}
             />
             <Label htmlfor="vorname">Vorame: </Label>
             <Input 
               type="text" 
               name="vorname" 
               placeholder="Dein Vorname: "
+              onChange={updateUser}
+              value={user.vorname}
             />
             <Label htmlFor="email">Email: </Label>
             <Input 
               type="text" 
               name="email" 
               placeholder="Deine Email:"
+              onChange={updateUser}
+              value={user.email}
             />
           </InputField>
           
            <Buttons>
-              <Button> Send {'>'}</Button>
+              <Button type="submit" value=""> Send {'>'}</Button>
               <Button type="reset"> 
                 Cancel X
               </Button>
             </Buttons>
+            </form>
           </main>
         </Wrapper>
       </div>
     
     )
-}
+};
 
 
 const Wrapper = styled.section`
@@ -118,7 +153,6 @@ const Liste = styled.ul`
 `;
 
 const Answer = styled.li`
-  //background-image: linear-gradient(#ff0f7b, #f89b29);
   background: var(--fourth);
   border-radius: 0.5rem;
   color: var(--primary);

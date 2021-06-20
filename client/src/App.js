@@ -1,19 +1,16 @@
 
 import styled from 'styled-components/macro';
-import HeaderNavigation from './HeaderNavigation';
+import HeaderNavigation from './components/HeaderNavigation';
 import Home from './pages/Home';
 import QuizForm from './pages/Quizform';
 import {Switch, Route} from 'react-router-dom';
-//import loadFromDatabase from '../controller/lib/databaseHelpers';
 import { useEffect, useState } from 'react';
-import DMELogo from './assets/dme_logo2_klein.jpg';
-import Tree from './assets/tree.svg';
-import Skull from './assets/skull.svg';
+import DMELogo from './assets/dme_logo.jpg';
 
 
 function App() {
  
-  const [quizs, setQuizs] = useState([]);
+  // const [quizs, setQuizs] = useState([]);
   const [users, setUsers] = useState([]);
 
   async function addUser(user) {
@@ -69,7 +66,7 @@ background: var(--primary);
 `;
 
 const Logo = styled.img`
-  width: 100px;
+  width: 150px;
   margin: 0 auto;
 `;
 
