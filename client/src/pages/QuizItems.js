@@ -1,31 +1,36 @@
-
 import styled from 'styled-components/macro';
 import PropTypes from 'prop-types';
 import { useState } from 'react';
 import initialAdvent from '../components/Items';
 
 const td = new Date(); // aktuelles Datum und aktuelle Zeit
-const today = td.getDate(); // aktueller Tag 
+const today = td.getDate(); // aktueller Tag
 
+const geschenkeFuerHeute = initialAdvent.filter(
+  (geschenk) => geschenk.day === today
+);
+console.log(geschenkeFuerHeute);
 
 export default function QuizItems(props) {
-const [quizItem, setQuizItem] = useState(initialAdvent);
-const { id, item, day } = props;
+  //const [quizItem, setQuizItem] = useState(initialAdvent);
 
-const showQuizItems = initialAdvent.map(quizItem => {
+  const showQuizItems = initialAdvent.map((quizItem) => {
+    const { id, item, day } = quizItem;
+    return (
+      <Item key={id}>
+        {item} {day}
+      </Item>
+    );
+  });
 
-  return (
-    <Liste>
-      {showQuizItems}
-    </Liste>
-    )});
-  };
+  return <Liste>{showQuizItems}</Liste>;
+}
 
 // Fehlerprophylaxe für Devs und Dokumentation
 QuizItems.propTypes = {
   id: PropTypes.string,
   item: PropTypes.string,
-  day: PropTypes.string
+  day: PropTypes.string,
 };
 
 const Liste = styled.ul`
@@ -33,7 +38,7 @@ const Liste = styled.ul`
   padding-left: 0;
 `;
 
-const Items = styled.li`
+const Item = styled.li`
   color: var(--third);
   font-size: 1.5rem;
   list-style: none;
