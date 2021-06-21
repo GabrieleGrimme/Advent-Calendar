@@ -18,7 +18,7 @@ function postUser(req, res) {
     name: req.body.name,
     vorname: req.body.vorname,
     email: req.body.email,
-    datum: req.body.datum,
+    datum: new Date(),
   });
   user
     .save()
