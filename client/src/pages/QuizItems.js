@@ -1,7 +1,7 @@
 import styled from 'styled-components/macro';
 import PropTypes from 'prop-types';
 import { useState } from 'react';
-import initialAdvent from '../components/Items';
+import initialAdvent from '../Items';
 
 const td = new Date(); // aktuelles Datum und aktuelle Zeit
 const today = td.getDate(); // aktueller Tag
@@ -12,8 +12,6 @@ const geschenkeFuerHeute = initialAdvent.filter(
 console.log(geschenkeFuerHeute);
 
 export default function QuizItems(props) {
-  //const [quizItem, setQuizItem] = useState(initialAdvent);
-
   const showQuizItems = initialAdvent.map((quizItem) => {
     const { id, item, day } = quizItem;
     return (
@@ -23,7 +21,9 @@ export default function QuizItems(props) {
     );
   });
 
-  return <Liste>{showQuizItems}</Liste>;
+  if (geschenkeFuerHeute) {
+    return <Liste>{showQuizItems}</Liste>;
+  }
 }
 
 // Fehlerprophylaxe für Devs und Dokumentation
@@ -40,7 +40,7 @@ const Liste = styled.ul`
 
 const Item = styled.li`
   color: var(--third);
-  font-size: 1.5rem;
+  font-size: 1.2rem;
   list-style: none;
   margin-top: 0;
   padding-top: 0;

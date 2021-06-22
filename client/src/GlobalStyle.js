@@ -13,7 +13,6 @@ export default createGlobalStyle`
     --third: rgb(210, 68, 68); // red
     --fourth: rgb(250, 220, 194); //nude
     --fifth: rgb(110, 24, 72); //purple
-}
 
 body {
     background: var(--primary);

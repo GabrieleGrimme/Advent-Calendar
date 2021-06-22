@@ -5,15 +5,6 @@ import { useEffect, useState } from 'react';
 import QuizItems from './QuizItems';
 import Tree from '../assets/tree.svg';
 import Skull from '../assets/skull.svg';
-/*
-const adventItems = 
-        { 1: ['CD Deine Lakaien: Dual', 'CD Felix Marc'],
-          2: ['CD Croona: Ascend', 'Shirt DME-Radio', 'Buttons and Pen DME-Radio'],
-          3: ['CD Scheuber: Numb', 'Book The Cure'],
-          4: ['CD Omnimar: Darkpop', 'Autograph, Maria from Omnimar'],
-          5: ['Poster von Agonoize', '1 Mini-Headphone']
-        };
-*/
 
 export default function QuizForm({ onAddUser }) {
   const initialUser = {
@@ -132,7 +123,7 @@ const Wrapper = styled.section`
 
 const H2 = styled.h2`
   color: var(--third);
-  font-size: 2rem;
+  font-size: 1.5rem;
   margin: 0 auto;
 `;
 
