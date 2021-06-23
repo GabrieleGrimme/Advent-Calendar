@@ -61,15 +61,17 @@ export default function QuizForm({ onAddUser }) {
               </Liste>
             </article>
 
-            <H2>Heute verlosen wir:</H2>
+            <H2>Gewinnspiel:</H2>
 
             <ItemsWrapper>
               <div>
                 <img src={Tree} alt="Tree" />
               </div>
+              {/*
               <div>
                 <QuizItems />
               </div>
+              */}
             </ItemsWrapper>
 
             <InputField>
@@ -101,10 +103,9 @@ export default function QuizForm({ onAddUser }) {
 
             <Buttons>
               <Button type="submit" value="">
-                {' '}
-                Send {'>'}
+                {'>'}
               </Button>
-              <Button type="reset">Cancel X</Button>
+              <Button type="reset"> X </Button>
             </Buttons>
           </form>
         </main>
@@ -182,12 +183,13 @@ const Buttons = styled.section`
 
 const Button = styled.button`
   background: none;
-  border: none;
+  border: 1px solid var(--third);
+  border-radius: 5rem;
   color: var(--third);
   cursor: pointer;
   font-weight: bolder;
   font-size: 1.5rem;
-  padding: 0.2rem;
+  padding: 0.8rem;
   :hover {
     background: transparent;
     color: var(--secondary);

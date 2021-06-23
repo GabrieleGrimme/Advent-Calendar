@@ -2,7 +2,7 @@ import styled from 'styled-components/macro';
 import PropTypes from 'prop-types';
 import { useEffect, useState } from 'react';
 import CalBackground from '../assets/cal_background.svg';
-import initialAdvent from '../Items';
+import initialAdvent from '../src/Items';
 
 export default function AdvCal(props) {
   //const [quizItem, setQuizItem] = useState(initialAdvent);
@@ -45,3 +45,41 @@ const Items = styled.article`
     color: var(--secondary);
   }
 `;
+---
+{
+  "id": 31,
+  "day": 31,
+  "image": "",
+  "text": "CD Scheuber Numb"
+},
+{
+  "id": 30,
+  "day": 30,
+  "image": "https://www.fg-a.com/christmas/santa-animated-elf-1.gif",
+  "text": "CD Scheuber Numb"
+},{
+  "id": 29,
+  "day": 29,
+  "image": "https://www.fg-a.com/christmas/santa-animated-elf-1.gif",
+  "text": "CD Scheuber Numb"
+},{
+  "id": 28,
+  "day": 28,
+  "image": "https://www.fg-a.com/christmas/santa-animated-elf-1.gif",
+  "text": "CD Scheuber Numb"
+},{
+  "id": 27,
+  "day": 27,
+  "image": "https://www.fg-a.com/christmas/santa-animated-elf-1.gif",
+  "text": "CD Scheuber Numb"
+},{
+  "id": 26,
+  "day": 26,
+  "image": "https://www.fg-a.com/christmas/santa-animated-elf-1.gif",
+  "text": "CD Scheuber Numb"
+},{
+  "id": 25,
+  "day": 25,
+  "image": "https://www.fg-a.com/christmas/santa-animated-elf-1.gif",
+  "text": "CD Scheuber Numb"
+},

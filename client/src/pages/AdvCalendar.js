@@ -1,8 +1,9 @@
 import React, { useState, useEffect } from 'react';
 import styled from 'styled-components/macro';
-import CalBackground from '../assets/cal_background.svg';
-import Modal from './Modal';
-import data from '../data.json';
+
+import Modal from '../components/Modal';
+import Data from '../data.json';
+import '../lib/basic.css';
 
 function AdvCal() {
   const [show, setShow] = useState(false);
@@ -23,7 +24,7 @@ function AdvCal() {
     let correctedDay = parseInt(e.target.id) - parseInt(1);
     setActiveDoor(e.target.id);
     if (
-      today.getDate() >= data[correctedDay].day &&
+      today.getDate() >= Data[correctedDay].day &&
       today.getMonth() === month
     ) {
       e.target.classList.add('opened');
@@ -41,21 +42,21 @@ function AdvCal() {
       <Modal
         onClose={showModal}
         show={show}
-        data={data}
+        data={Data}
         activeDoor={activeDoor}
         text={text}
       ></Modal>
-
       <Container>
         <ImageGrid>
-          {data.map((item) => (
+          {Data.map((item) => (
             <BackImage
               key={item.id}
               id={item.day}
+              className="back-image"
               style={
                 openedArr.includes(item.id) &&
                 today.getMonth() === month &&
-                today.getDate() >= data[parseInt(item.id) - parseInt(1)].day
+                today.getDate() >= Data[parseInt(item.id) - parseInt(1)].day
                   ? { visibility: 'visible', zIndex: '3' }
                   : {
                       visibility: 'hidden',
@@ -71,25 +72,25 @@ function AdvCal() {
         </ImageGrid>
 
         <Doors>
-          {data.map((item) => (
-            <BackDoor
+          {Data.map((item) => (
+            <Back
               key={item.id}
               style={
-                openedArr.includes(item.id) &&
-                today.getDate() >= data[parseInt(item.id) - parseInt(1)].day
+                !openedArr.includes(item.id) &&
+                today.getDate() >= Data[parseInt(item.id) - parseInt(1)].day
                   ? { zIndex: '4' }
                   : { zIndex: '3', pointerEvents: 'none' }
               }
             >
-              <Door
+              <FrontDoor
                 onClick={openDoor}
                 key={item.id}
                 id={item.id}
                 day={item.day}
               >
                 <span>{item.day}</span>
-              </Door>
-            </BackDoor>
+              </FrontDoor>
+            </Back>
           ))}
         </Doors>
       </Container>
@@ -103,56 +104,6 @@ const WrapAll = styled.section`
 
 const Container = styled.div`
   width: 100vw;
-  //background-size: auto;
-  //background: url(${CalBackground});
-  //background-repeat: no-repeat;
-`;
-
-/* FRONT DOOR */
-const Door = styled.div`
-  background: linear-gradient(rgb(0, 0, 0), rgb(210, 68, 68));
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  height: 200px;
-  width: 140px;
-  border: 2.5px solid rgb(255, 209, 209);
-  border-radius: 0.5rem;
-  text-align: center;
-  font-size: 2rem;
-  transform-origin: left;
-  /*Speed of Door animation*/
-  transition: all 1.4s ease-in-out;
-  z-index: -2;
-  .door span {
-    pointer-events: none;
-  }
-  .opened {
-    background-color: rgb(250, 102, 102);
-    transform: perspective(1200px) translateZ(0px) translateX(0px)
-      translateY(0px) rotateY(-105deg);
-  }
-`;
-
-const Doors = styled.div`
-  display: grid;
-  width: 100vw;
-  padding: 100px;
-  grid-template-columns: repeat(3, 1fr);
-  grid-gap: 150px;
-  grid-row-gap: 170px;
-  grid-auto-flow: row;
-
-  .shine {
-    box-shadow: 15px 0px 100px 12px rgba(255, 255, 255, 0.8),
-      0 0 40px 9px rgba(255, 253, 224, 0.7);
-    transition: all 1s ease-in-out;
-  }
-`;
-
-const BackDoor = styled.div`
-  width: 140px;
-  justify-self: center;
 `;
 
 const ImageGrid = styled.div`
@@ -176,6 +127,39 @@ const BackImage = styled.img`
   height: 200px;
   justify-self: center;
   object-fit: contain;
+`;
+
+/* FRONT DOOR */
+const FrontDoor = styled.div`
+  background: linear-gradient(rgb(0, 0, 0), rgb(210, 68, 68));
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 200px;
+  width: 140px;
+  border: 2.5px solid rgb(255, 209, 209);
+  border-radius: 0.5rem;
+  text-align: center;
+  font-size: 2rem;
+  transform-origin: left;
+  /*Speed of Door animation*/
+  transition: all 1.4s ease-in-out;
+  z-index: -2;
+`;
+
+const Doors = styled.div`
+  display: grid;
+  width: 100vw;
+  padding: 100px;
+  grid-template-columns: repeat(3, 1fr);
+  grid-gap: 150px;
+  grid-row-gap: 170px;
+  grid-auto-flow: row;
+`;
+
+const Back = styled.div`
+  width: 140px;
+  justify-self: center;
 `;
 
 export default AdvCal;

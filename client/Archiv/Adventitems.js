@@ -1,7 +1,7 @@
 import styled from 'styled-components/macro';
 import PropTypes from 'prop-types';
 import { useState } from 'react';
-import initialAdvent from '../Items';
+import initialAdvent from '../src/Items';
 
 const td = new Date(); // aktuelles Datum und aktuelle Zeit
 const today = td.getDate(); // aktueller Tag

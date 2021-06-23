@@ -1,10 +1,5 @@
-import AdvCalendar from '../components/AdvCalendar'
+import AdvCalendar from '../pages/AdvCalendar';
 
 export default function Home() {
-  
-    return (
-      <AdvCalendar />
-  )
-};
-
-
+  return <AdvCalendar />;
+}
