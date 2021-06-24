@@ -1,75 +1,71 @@
 [
+
   {
-    "id": 24,
-    "day": 24,
-    "image": "https://www.fg-a.com/christmas/santa-animated-elf-1.gif",
-    "text": "CD Scheuber Numb"
+    "id": 1,
+    "day": 1,
+    "image": "",
+    "text": "Exclusive Sondersendung nur für dich!"
   },
   {
-    "id": 23,
-    "day": 23,
-    "image": "https://www.fg-a.com/christmas/santa-animated-elf-1.gif",
-    "text": "Sticker, Poster"
+    "id": 2,
+    "day": 2,
+    "image": "",
+    "text": "Exclusive Sondersendung von 1 Stunde an deinem Geburtstag!"
   },
   {
-    "id": 22,
-    "day": 22,
-    "image": "https://www.fg-a.com/christmas/santa-animated-elf-1.gif",
-    "text": "CD Croona: Ascend"
+    "id": 3,
+    "day": 3,
+    "image": "",
+    "text": "Exclusive Sondersendung von 1 Stunde an deinem Geburtstag!"
   },
   {
-    "id": 21,
-    "day": 21,
-    "image": "https://www.fg-a.com/christmas/santa-animated-elf-1.gif",
-    "text": "Shirt DME-Radio"
+    "id": 4,
+    "day": 4,
+    "image": "",
+    "text": "CD Best of 80ths Wave"
   },
   {
-    "id": 20,
-    "day": 20,
-    "image": "https://www.fg-a.com/christmas/santa-animated-elf-1.gif",
-    "text": "Book -- The Cure"
+    "id": 5,
+    "day": 5,
+    "image": "",
+    "text": "CD Digital Energy + Button"
+  },
+  
+  {
+    "id": 6,
+    "day": 6,
+    "image": "",
+    "text": "Kopfkissen mit DME-Logo"
   },
   {
-    "id": 19,
-    "day": 19,
-    "image": "https://www.fg-a.com/christmas/santa-animated-elf-1.gif",
-    "text": "CD Omnimar: Darkpop"
+    "id": 7,
+    "day": 7,
+    "image": "",
+    "text": "3 Best of Electro Sampler"
   },
   {
-    "id": 18,
-    "day": 18,
-    "image": "https://www.fg-a.com/christmas/santa-animated-elf-1.gif",
-    "text": "Poster von Agonoize + 1 Mini-Headphone"
+    "id": 8,
+    "day": 8,
+    "image": "",
+    "text": "Schnürsenkel von Orange Sector + EP"
   },
   {
-    "id": 17,
-    "day": 17,
-    "image": "https://www.fg-a.com/christmas/santa-animated-elf-1.gif",
-    "text": "Konzertkarte Aesthetic Perfection"
+    "id": 9,
+    "day": 9,
+    "image": "",
+    "text": "Umhängetasche Ministry"
   },
   {
-    "id": 16,
-    "day": 16,
-    "image": "https://www.fg-a.com/christmas/santa-animated-elf-1.gif",
-    "text": "Meet&Greet mit Lord of the Lost"
+    "id": 10,
+    "day": 10,
+    "image": "",
+    "text": "Lene Lovich T-Shirt"
   },
   {
-    "id": 15,
-    "day": 15,
-    "image": "https://www.fg-a.com/christmas/santa-animated-elf-1.gif",
-    "text": "CD Burn von Burn"
-  },
-  {
-    "id": 14,
-    "day": 14,
-    "image": "https://www.fg-a.com/christmas/santa-animated-elf-1.gif",
-    "text": "CD 25 Years VNV-Nation"
-  },
-  {
-    "id": 13,
-    "day": 13,
-    "image": "https://www.fg-a.com/christmas/santa-animated-elf-1.gif",
-    "text": "CD Best of Mera Luna"
+    "id": 11,
+    "day": 11,
+    "image": "",
+    "text": "Kulturtasche von Culture Kültür"
   },
   {
     "id": 12,
@@ -78,69 +74,75 @@
     "text": "Kalender 2022 Amphi Festival"
   },
   {
-    "id": 11,
-    "day": 11,
-    "image": "https://www.fg-a.com/christmas/santa-animated-elf-1.gif",
-    "text": "Kulturtasche von Culture Kültür"
+    "id": 13,
+    "day": 13,
+    "image": "",
+    "text": "CD Best of Mera Luna"
   },
   {
-    "id": 10,
-    "day": 10,
-    "image": "https://www.fg-a.com/christmas/santa-animated-elf-1.gif",
-    "text": "Lene Lovich T-Shirt"
+    "id": 14,
+    "day": 14,
+    "image": "",
+    "text": "CD 25 Years VNV-Nation"
   },
   {
-    "id": 9,
-    "day": 9,
-    "image": "https://www.fg-a.com/christmas/santa-animated-elf-1.gif",
-    "text": "Umhängetasche Ministry"
+    "id": 15,
+    "day": 15,
+    "image": "",
+    "text": "CD Burn von Burn"
   },
   {
-    "id": 8,
-    "day": 8,
-    "image": "https://www.fg-a.com/christmas/santa-animated-elf-1.gif",
-    "text": "Schnürsenkel von Orange Sector + EP"
+    "id": 16,
+    "day": 16,
+    "image": "",
+    "text": "Meet&Greet mit Lord of the Lost"
   },
   {
-    "id": 7,
-    "day": 7,
-    "image": "https://www.fg-a.com/christmas/santa-animated-elf-1.gif",
-    "text": "3 Best of Electro Sampler"
+    "id": 17,
+    "day": 17,
+    "image": "",
+    "text": "Konzertkarte Aesthetic Perfection"
   },
   {
-    "id": 6,
-    "day": 6,
-    "image": "https://www.fg-a.com/christmas/santa-animated-elf-1.gif",
-    "text": "Kopfkissen mit DME-Logo"
+    "id": 18,
+    "day": 18,
+    "image": "",
+    "text": "Poster von Agonoize + 1 Mini-Headphone"
   },
   {
-    "id": 5,
-    "day": 5,
-    "image": "https://www.fg-a.com/christmas/santa-animated-elf-1.gif",
-    "text": "CD Digital Energy + Button"
+    "id": 19,
+    "day": 19,
+    "image": "",
+    "text": "CD Omnimar: Darkpop"
   },
   {
-    "id": 4,
-    "day": 4,
-    "image": "https://www.fg-a.com/christmas/santa-animated-elf-1.gif",
-    "text": "CD Best of 80ths Wave"
+    "id": 20,
+    "day": 20,
+    "image": "",
+    "text": "Book -- The Cure"
   },
   {
-    "id": 3,
-    "day": 3,
-    "image": "https://www.fg-a.com/christmas/santa-animated-elf-1.gif",
-    "text": "Exclusive Sondersendung von 1 Stunde an deinem Geburtstag!"
+    "id": 21,
+    "day": 21,
+    "image": "",
+    "text": "Shirt DME-Radio"
   },
   {
-    "id": 2,
-    "day": 2,
-    "image": "https://www.fg-a.com/christmas/santa-animated-elf-1.gif",
-    "text": "Exclusive Sondersendung von 1 Stunde an deinem Geburtstag!"
+    "id": 22,
+    "day": 22,
+    "image": "",
+    "text": "CD Croona: Ascend"
   },
   {
-    "id": 1,
-    "day": 1,
-    "image": "https://www.fg-a.com/christmas/santa-animated-elf-1.gif",
-    "text": "Exclusive Sondersendung von 1 Stunde an deinem Geburtstag!"
+    "id": 23,
+    "day": 23,
+    "image": "",
+    "text": "Sticker, Poster"
+  },
+  {
+    "id": 24,
+    "day": 24,
+    "image": "",
+    "text": "CD Scheuber Numb"
   }
 ]

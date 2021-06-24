@@ -1,17 +1,17 @@
 import React, { useState, useEffect } from 'react';
 import styled from 'styled-components/macro';
 
-import Modal from '../components/Modal';
+import Modal from './Modal';
 import Data from '../data.json';
-import '../lib/basic.css';
+import '../css/frontdoor.css';
 
 function AdvCal() {
   const [show, setShow] = useState(false);
-  const [text, setText] = useState(0);
+  const [ident, setIdent] = useState(0);
   const [activeDoor, setActiveDoor] = useState(0);
   const [openedArr, setOpenedArr] = useState([]);
 
-  //Set the month for testing / Xmas purposes (0 == January, 11 == December)
+  //Set the month for testing (0 == January, 11 == December)
   const month = 5;
   const today = new Date();
 
@@ -33,7 +33,7 @@ function AdvCal() {
   };
 
   const showModal = (e) => {
-    setText(e.target.id);
+    setIdent(e.target.id);
     setShow(!show);
   };
 
@@ -44,7 +44,7 @@ function AdvCal() {
         show={show}
         data={Data}
         activeDoor={activeDoor}
-        text={text}
+        text={ident}
       ></Modal>
       <Container>
         <ImageGrid>
@@ -66,7 +66,7 @@ function AdvCal() {
               }
               src={item.image}
               onClick={showModal}
-              alt="xmas"
+              alt="Click on me, you will see!"
             />
           ))}
         </ImageGrid>
@@ -99,7 +99,7 @@ function AdvCal() {
 }
 
 const WrapAll = styled.section`
-  width: 100 vw;
+  width: 100vw;
 `;
 
 const Container = styled.div`

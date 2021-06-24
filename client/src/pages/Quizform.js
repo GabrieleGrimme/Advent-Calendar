@@ -1,8 +1,6 @@
-import styled from 'styled-components/macro';
-//import loadFromDatabase from '../controller/lib/databaseHelpers';
 import { useEffect, useState } from 'react';
+import styled from 'styled-components/macro';
 
-import QuizItems from './QuizItems';
 import Tree from '../assets/tree.svg';
 import Skull from '../assets/skull.svg';
 
@@ -67,11 +65,6 @@ export default function QuizForm({ onAddUser }) {
               <div>
                 <img src={Tree} alt="Tree" />
               </div>
-              {/*
-              <div>
-                <QuizItems />
-              </div>
-              */}
             </ItemsWrapper>
 
             <InputField>
