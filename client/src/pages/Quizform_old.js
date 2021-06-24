@@ -1,12 +1,10 @@
-import { useEffect, useState } from 'react';
 import styled from 'styled-components/macro';
+//import loadFromDatabase from '../controller/lib/databaseHelpers';
+import { useEffect, useState } from 'react';
 
-import Start from '../components/Start';
-import Quiz from '../components/Quiz';
-
+import QuizItems from './QuizItems';
 import Tree from '../assets/tree.svg';
 import Skull from '../assets/skull.svg';
-import { Button } from '../components/Button';
 
 export default function QuizForm({ onAddUser }) {
   const initialUser = {
@@ -18,7 +16,6 @@ export default function QuizForm({ onAddUser }) {
 
   const [user, setUser] = useState(initialUser);
   const [isError, setIsError] = useState(false);
-  const [start, setStart] = useState(false);
 
   function handleFormSubmit(event) {
     event.preventDefault();
@@ -39,22 +36,42 @@ export default function QuizForm({ onAddUser }) {
       <Wrapper>
         <main>
           <form onSubmit={handleFormSubmit}>
-            <article>
-              DME-Radio einschalten, Quizfrage beantworten und und tolle Preise
-              gewinnen!
-            </article>
-
             <audio controls id="audioPlayer">
               <source
                 src="https://server4.streamserver24.com:8080/proxy/darkmelo?mp=%2Fstream"
                 type="audio/mpeg"
               />
             </audio>
+            <article>
+              DME-Radio einschalten, Quizfrage beantworten und und tolle Preise
+              gewinnen!
+            </article>
+
+            <Question>
+              Hier steht die Quizfrage! Hier steht die Quizfrage! Hier steht die
+              Quizfrage!
+            </Question>
+
+            <article>
+              <Liste>
+                <Answer> ... Answer1 ... </Answer>
+                <Answer> ... Answer2 ... </Answer>
+                <Answer> ... Answer3 ... </Answer>
+                <Answer> ... Answer4 ... </Answer>
+              </Liste>
+            </article>
+
+            <H2>Gewinnspiel:</H2>
 
             <ItemsWrapper>
-              <div className="quiz">
-                {start ? <Quiz /> : <Start props={setStart} />}
+              <div>
+                <img src={Tree} alt="Tree" />
               </div>
+              {/*
+              <div>
+                <QuizItems />
+              </div>
+              */}
             </ItemsWrapper>
 
             <InputField>
@@ -105,6 +122,34 @@ const Wrapper = styled.section`
   text-align: center;
 `;
 
+const H2 = styled.h2`
+  color: var(--third);
+  font-size: 1.5rem;
+  margin: 0 auto;
+`;
+
+const Question = styled.article`
+  background: var(--fourth);
+  border-radius: 0.5rem;
+  color: var(--primary);
+  margin-top: 1.5rem;
+  padding: 0.5rem;
+`;
+
+const Liste = styled.ul`
+  list-style: none;
+  padding-left: 0;
+`;
+
+const Answer = styled.li`
+  background: var(--fourth);
+  border-radius: 0.5rem;
+  color: var(--primary);
+  list-style: url(${Skull});
+  margin: 0.5rem;
+  padding: 0.2rem;
+`;
+
 const InputField = styled.article`
   display: flex;
   flex-direction: column;
@@ -134,4 +179,19 @@ const Buttons = styled.section`
   gap: 6rem;
   display: flex;
   justify-content: space-around;
+`;
+
+const Button = styled.button`
+  background: none;
+  border: 1px solid var(--third);
+  border-radius: 5rem;
+  color: var(--third);
+  cursor: pointer;
+  font-weight: bolder;
+  font-size: 1.5rem;
+  padding: 0.8rem;
+  :hover {
+    background: transparent;
+    color: var(--secondary);
+  }
 `;
