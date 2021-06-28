@@ -61,20 +61,17 @@ const Quiz = () => {
 };
 
 const QuizWindow = styled.div`
+  background: linear-gradient(rgb(0, 0, 0), rgb(210, 68, 68));
+  border-radius: 0.5rem;
+  font-family: 'Courier New', Courier, monospace;
+  margin-top: 1rem;
   text-align: center;
-  font-size: clamp(20px, 2.5vw, 24px);
-  margin-top: 10vh;
 `;
 
 const Options = styled.div`
   display: flex;
   flex-direction: column;
-  width: 70%;
-  margin: 2em auto;
-
-  @media screen and (min-width: 1180px) {
-    width: 50%;
-  }
+  margin: 2rem auto;
 `;
 
 const Option = styled.button`

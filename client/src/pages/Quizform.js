@@ -51,11 +51,10 @@ export default function QuizForm({ onAddUser }) {
               />
             </audio>
 
-            <ItemsWrapper>
-              <div className="quiz">
-                {start ? <Quiz /> : <Start props={setStart} />}
-              </div>
-            </ItemsWrapper>
+            <QuizWrapper>
+              <h2> Musik Quiz </h2>
+              {start ? <Quiz /> : <Start props={setStart} />}
+            </QuizWrapper>
 
             <InputField>
               <Label htmlfor="name">Name: </Label>
@@ -122,12 +121,8 @@ const Input = styled.input`
   border-radius: 0.5rem;
 `;
 
-const ItemsWrapper = styled.article`
-  align-items: flex-end;
-  justify-content: space-around;
-  display: flex;
+const QuizWrapper = styled.article`
   margin: 0 auto;
-  padding: 0.2rem;
 `;
 
 const Buttons = styled.section`
