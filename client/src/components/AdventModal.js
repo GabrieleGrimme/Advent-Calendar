@@ -1,81 +1,32 @@
-import React from 'react';
+import Modal from 'react-modal';
 import styled from 'styled-components/macro';
-import data from '../data.json';
 
-import { makeStyles } from '@material-ui/core/styles';
-import Modal from '@material-ui/core/Modal';
-
-function rand() {
-  return Math.round(Math.random() * 20) - 10;
-}
-
-function getModalStyle() {
-  const top = 50 + rand();
-  const left = 50 + rand();
-
-  return {
-    top: `${top}%`,
-    left: `${left}%`,
-    transform: `translate(-${top}%, -${left}%)`,
-  };
-}
-
-const useStyles = makeStyles((theme) => ({
-  paper: {
-    position: 'absolute',
-    width: 150,
-    backgroundColor: theme.palette.background.paper,
-    border: '2px solid #000',
-    boxShadow: theme.shadows[5],
-    padding: theme.spacing(2, 4, 3),
-  },
-}));
-
-export default function AdventModal() {
-  const classes = useStyles();
-  const [modalStyle] = React.useState(getModalStyle);
-  const [open, setOpen] = React.useState(false);
-
-  const handleOpen = () => {
-    setOpen(true);
-  };
-
-  const handleClose = () => {
-    setOpen(false);
-  };
-
+export default function AdventModal({ advDayContent, isOpen, onClose }) {
   const body = (
-    <div>
-      <h2 id="simple-modal-title">Text in a modal</h2>
-      <p id="simple-modal-description">
-        Duis mollis, est non commodo luctus, nisi erat porttitor ligula.
-      </p>
-      <AdventModal />
-    </div>
+    <ModalStyle>
+      <CloseButton onClick={onClose}>x</CloseButton>
+
+      <h2>{advDayContent.day}. Dez. </h2>
+      <p> Wir verlosen heute: </p>
+      {advDayContent.text}
+    </ModalStyle>
   );
 
   return (
-    <div>
-      <Button type="button" onClick={handleOpen}>
-        Open Modal
-      </Button>
-
-      <Modal
-        open={open}
-        onClose={handleClose}
-        aria-labelledby="simple-modal-title"
-        aria-describedby="simple-modal-description"
-      >
-        {body}
-      </Modal>
-    </div>
+    <Modal isOpen={isOpen} onClose={onClose}>
+      {body}
+    </Modal>
   );
 }
+Modal.defaultStyles.overlay.background = 'none';
+Modal.defaultStyles.overlay.border = 'none';
+Modal.defaultStyles.content.background = 'none';
+Modal.defaultStyles.content.border = 'none';
 
-const Button = styled.button`
+const CloseButton = styled.button`
   color: var(--third);
   font-size: 1.5rem;
-  position: absolute;
+  position: fixed;
   right: 0;
   top: 0;
   width: 28px;
@@ -83,4 +34,27 @@ const Button = styled.button`
   background: none;
   border: none;
   cursor: pointer;
+`;
+
+const ModalStyle = styled.div`
+  background: radial-gradient(
+    circle,
+    rgba(210, 68, 68, 1) 0%,
+    rgba(0, 0, 0, 0.8) 70%
+  );
+  border: 1px solid var(--third);
+  border-radius: 0.5rem;
+  display: grid;
+  max-height: 100%;
+  max-width: 100%;
+  place-items: center;
+  padding: 0.5rem;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  text-align: center;
+  transform: translate(-50%, -50%);
+  box-shadow: 15px 0px 150px 12px rgba(255, 255, 255, 0.8),
+    0 0 40px 9px rgba(255, 253, 224, 0.7);
+  transition: all 1.8s ease-in-out;
 `;

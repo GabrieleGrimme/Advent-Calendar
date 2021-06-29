@@ -7,8 +7,8 @@ const GameOver = ({ pts }) => {
   return (
     <>
       <Title>Game Over</Title>
-      <Points>Du hast {pts} von 5!</Points>
       <Button onClick={refreshPage}> Nochmal? </Button>
+      <Points>Du hast {pts} von 3!</Points>
     </>
   );
 };

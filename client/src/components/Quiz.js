@@ -1,7 +1,3 @@
-// https://opentdb.com/api.php?amount=5&category=18&difficulty=easy&type=multiple
-
-//list-style: url(${Skull});
-
 import React, { useState, useEffect } from 'react';
 import styled from 'styled-components/macro';
 import axios from 'axios';
@@ -23,7 +19,7 @@ const Quiz = () => {
 
   useEffect(() => {
     axios
-      .get('https://opentdb.com/api.php?amount=5&category=12&type=multiple')
+      .get('https://opentdb.com/api.php?amount=3&category=12&type=multiple')
       .then((res) => {
         setQuiz(
           res.data.results.map((item) => ({
@@ -37,7 +33,7 @@ const Quiz = () => {
   }, []);
 
   return (
-    <QuizWindow>
+    <QuizBox>
       {quiz[number] && (
         <>
           <Question
@@ -55,12 +51,12 @@ const Quiz = () => {
           </Options>
         </>
       )}
-      {number === 5 && <GameOver pts={pts} />}
-    </QuizWindow>
+      {number === 3 && <GameOver pts={pts} />}
+    </QuizBox>
   );
 };
 
-const QuizWindow = styled.div`
+const QuizBox = styled.div`
   background: linear-gradient(rgb(0, 0, 0), rgb(210, 68, 68));
   border-radius: 0.5rem;
   font-family: 'Courier New', Courier, monospace;

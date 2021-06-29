@@ -40,7 +40,7 @@ export default function QuizForm({ onAddUser }) {
         <main>
           <form onSubmit={handleFormSubmit}>
             <article>
-              DME-Radio einschalten, Quizfrage beantworten und und tolle Preise
+              DME-Radio einschalten, Quizfragen beantworten und tolle Preise
               gewinnen!
             </article>
 
