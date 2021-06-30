@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import styled from 'styled-components/macro';
+import validateUser from '../lib/validations';
 
 import Start from '../components/Start';
 import Quiz from '../components/Quiz';
@@ -21,9 +22,13 @@ export default function QuizForm({ onAddUser }) {
 
   function handleFormSubmit(event) {
     event.preventDefault();
-    onAddUser(user);
-    setUser(initialUser);
-    setIsError(false);
+    if (validateUser(user)) {
+      onAddUser(user);
+      setUser(initialUser);
+      setIsError(false);
+    } else {
+      setIsError(true);
+    }
   }
 
   function updateUser(event) {
@@ -59,6 +64,15 @@ export default function QuizForm({ onAddUser }) {
               {start ? <Quiz /> : <Start props={setStart} />}
             </QuizWrapper>
 
+            {isError && (
+              <ErrorBox>
+                <span>
+                  <img src={Skull} alt="Falsche Eingabe" />
+                </span>
+                <span>Bitte überprüfe deine Formulareingabe!</span>
+              </ErrorBox>
+            )}
+
             <InputField>
               <Label htmlfor="name">Name: </Label>
               <Input
@@ -90,7 +104,10 @@ export default function QuizForm({ onAddUser }) {
               <Button type="submit" value="">
                 {'>'}
               </Button>
-              <Button type="reset"> X </Button>
+              <Button onClick={() => setUser(initialUser)} type="reset">
+                {' '}
+                X{' '}
+              </Button>
             </Buttons>
           </form>
         </main>
@@ -144,4 +161,15 @@ const RadioTitle = styled.article`
 const FootNote = styled.article`
   font-size: 14px;
   margin-top: 1rem;
+`;
+
+const ErrorBox = styled.div`
+  background: red;
+  border-radius: 0.5rem;
+  color: ivory;
+  display: grid;
+  grid-template-columns: 0.5fr 3fr;
+  font-weight: bolder;
+  padding: 1rem;
+  place-items: center;
 `;
