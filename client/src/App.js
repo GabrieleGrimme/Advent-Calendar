@@ -4,7 +4,7 @@ import { useState } from 'react';
 
 import HeaderNavigation from './components/HeaderNavigation';
 import Home from './pages/Home';
-import QuizForm from './pages/Quizform';
+import QuizInit from './pages/QuizInit';
 import DMELogo from './assets/dme_logo.jpg';
 
 function App() {
@@ -39,9 +39,9 @@ function App() {
               <Home />
             </div>
           </Route>
-          <Route path="/Quizform">
+          <Route path="/Quiz">
             <div>
-              <QuizForm onAddUser={addUser} />
+              <QuizInit />
             </div>
           </Route>
         </Switch>
@@ -53,7 +53,7 @@ function App() {
 const HeadWrapper = styled.header`
   background: var(--primary);
   display: grid;
-  margin: 0.5rem;
+  margin-bottom: 0.5rem;
   padding: 1.2rem;
   place-items: center;
   text-align: center;
@@ -61,7 +61,7 @@ const HeadWrapper = styled.header`
 `;
 
 const Logo = styled.img`
-  width: 150px;
+  width: 180px;
   margin: 0 auto;
 `;
 

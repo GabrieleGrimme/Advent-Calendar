@@ -1,4 +1,5 @@
 import styled from 'styled-components/macro';
+import EmailSubmitAfterQuiz from './EmailSubmitAfterQuiz';
 import { Button } from './Button';
 
 const GameOver = ({ pts }) => {
@@ -9,6 +10,11 @@ const GameOver = ({ pts }) => {
       <Title>Game Over</Title>
       <Button onClick={refreshPage}> Nochmal? </Button>
       <Points>Du hast {pts} von 3!</Points>
+      <FootNote>
+        Um an der Verlosung teilzunehmen, trage dich bitte mit deinem Namen und
+        Email in die Liste ein.
+      </FootNote>
+      <EmailSubmitAfterQuiz />
     </>
   );
 };
@@ -23,6 +29,11 @@ const Points = styled.p`
   font-family: 'Courier New', Courier, monospace;
   font-size: 18px;
   margin-bottom: 3rem;
+`;
+
+const FootNote = styled.article`
+  font-size: 14px;
+  margin-top: 1rem;
 `;
 
 export default GameOver;

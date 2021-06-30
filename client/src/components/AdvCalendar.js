@@ -48,7 +48,6 @@ const Door = styled.button`
   color: var(--third);
   cursor: pointer;
   font-size: 2rem;
-  margin: 0.2rem;
   padding: 0.8rem;
   place-items: center;
   :hover {
