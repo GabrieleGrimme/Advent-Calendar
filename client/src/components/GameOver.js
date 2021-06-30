@@ -6,18 +6,23 @@ const GameOver = ({ pts }) => {
   const refreshPage = () => window.location.reload();
 
   return (
-    <>
+    <GameOverBox>
       <Title>Game Over</Title>
       <Button onClick={refreshPage}> Nochmal? </Button>
-      <Points>Du hast {pts} von 3!</Points>
+      <Points>Du hast {pts} von 3 Punkten!</Points>
       <FootNote>
         Um an der Verlosung teilzunehmen, trage dich bitte mit deinem Namen und
         Email in die Liste ein.
       </FootNote>
       <EmailSubmitAfterQuiz />
-    </>
+    </GameOverBox>
   );
 };
+
+const GameOverBox = styled.div`
+  background: linear-gradient(rgb(0, 0, 0), rgb(210, 68, 68));
+  border-radius: 0.5rem;
+`;
 
 const Title = styled.h1`
   font-family: 'Courier New', Courier, monospace;

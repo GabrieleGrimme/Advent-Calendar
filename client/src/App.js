@@ -41,7 +41,7 @@ function App() {
           </Route>
           <Route path="/Quiz">
             <div>
-              <QuizInit />
+              <QuizInit onAddUser={addUser} />
             </div>
           </Route>
         </Switch>

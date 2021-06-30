@@ -119,9 +119,8 @@ const Buttons = styled.section`
 `;
 
 const ErrorBox = styled.div`
-  background: red;
+  border: 2.4px dotted red;
   border-radius: 0.5rem;
-  color: ivory;
   display: grid;
   grid-template-columns: 0.5fr 3fr;
   font-weight: bolder;

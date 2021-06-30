@@ -1,6 +1,5 @@
 import { useState } from 'react';
 import styled from 'styled-components/macro';
-import validateUser from '../lib/validations';
 
 import Start from '../components/Start';
 import Quiz from '../components/Quiz';
