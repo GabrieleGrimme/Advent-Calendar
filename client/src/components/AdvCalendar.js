@@ -1,53 +1,60 @@
-
 import styled from 'styled-components/macro';
-import PropTypes from 'prop-types';
-import { useEffect, useState } from 'react';
+import { useState } from 'react';
+import AdventModal from './AdventModal';
 import CalBackground from '../assets/cal_background.svg';
-import initialAdvent from './Items';
+import Data from '../data.json';
 
+export default function AdvCal() {
+  const [open, setOpen] = useState(false);
+  const [openedDoor, setOpenedDoor] = useState({});
 
-export default function AdvCal(props) {
+  function openModal(advDay) {
+    setOpen(true);
+    setOpenedDoor(advDay);
+  }
 
-//const [quizItem, setQuizItem] = useState(initialAdvent);
-
-  const { id, item, day } = props;
-
-    const showAdvCal = initialAdvent.map(advDay => 
-        <Items key={advDay.id}>{advDay.id}</Items>  
-        )
+  const showAdvCal = Data.map((advDay) => (
+    <Door key={advDay.day} onClick={() => openModal(advDay)}>
+      {advDay.day}
+    </Door>
+  ));
 
   return (
-    <Door>
-      {showAdvCal}
-    </Door>
-  )};
+    <div>
+      <AdvCalBack>{showAdvCal}</AdvCalBack>
+      <AdventModal
+        advDayContent={openedDoor}
+        isOpen={open}
+        onClose={() => setOpen(false)}
+      />
+    </div>
+  );
+}
 
-// Fehlerprophylaxe für Devs und Dokumentation
-AdvCal.propTypes = {
-  id: PropTypes.number,
-  item: PropTypes.string,
-  day: PropTypes.number
-};
-
-const Door = styled.section` 
+const AdvCalBack = styled.section`
   background-size: auto;
-  background:url(${CalBackground}); 
+  background: url(${CalBackground});
+  border-radius: 0.5rem;
   display: grid;
   gap: 10px;
   grid-template-columns: 2fr 2fr 2fr 2fr;
   margin-top: 1rem;
 `;
 
-const Items = styled.article`
+const Door = styled.button`
   background: var(--secondary);
-  border-radius: 5rem;
+  border: none;
+  border-radius: 0.5rem;
   color: var(--third);
-  font-size: 2.0rem;
-  margin: 0.2rem;
-  padding: 1rem;
+  cursor: pointer;
+  font-size: 2rem;
+  padding: 0.8rem;
   place-items: center;
   :hover {
     background: transparent;
-    color: var(--secondary);
+    border-radius: 5rem;
+    box-shadow: 15px 0px 150px 12px rgba(255, 255, 255, 0.8),
+      0 0 40px 9px rgba(255, 253, 224, 0.7);
+    transition: all 1s ease-in-out;
   }
 `;
