@@ -1,10 +1,9 @@
-import { useEffect, useState } from 'react';
+import { useState } from 'react';
 import styled from 'styled-components/macro';
 
 import Start from '../components/Start';
 import Quiz from '../components/Quiz';
 
-import Tree from '../assets/tree.svg';
 import Skull from '../assets/skull.svg';
 import { Button } from '../components/Button';
 
@@ -39,10 +38,10 @@ export default function QuizForm({ onAddUser }) {
       <Wrapper>
         <main>
           <form onSubmit={handleFormSubmit}>
-            <article>
+            <RadioTitle>
               DME-Radio einschalten, Quizfragen beantworten und tolle Preise
               gewinnen!
-            </article>
+            </RadioTitle>
 
             <audio controls id="audioPlayer">
               <source
@@ -52,6 +51,10 @@ export default function QuizForm({ onAddUser }) {
             </audio>
 
             <QuizWrapper>
+              <FootNote>
+                Hast du schon hinter das Kalendertürchen geschaut, was du heute
+                gewinnen kannst?
+              </FootNote>
               <h2> Musik Quiz </h2>
               {start ? <Quiz /> : <Start props={setStart} />}
             </QuizWrapper>
@@ -109,7 +112,7 @@ const InputField = styled.article`
   flex-direction: column;
   flex-wrap: wrap;
   list-style: none;
-  padding: 0.7rem;
+  padding: 0.8rem;
 `;
 
 const Label = styled.label`
@@ -129,4 +132,16 @@ const Buttons = styled.section`
   gap: 6rem;
   display: flex;
   justify-content: space-around;
+`;
+
+const RadioTitle = styled.article`
+  font-family: 'Courier New', Courier, monospace;
+  font-size: 16px;
+  font-weight: bolder;
+  margin-bottom: 1rem;
+`;
+
+const FootNote = styled.article`
+  font-size: 14px;
+  margin-top: 1rem;
 `;

@@ -1,21 +1,33 @@
-import React from 'react';
-import styled, { css } from 'styled-components/macro';
+import styled from 'styled-components/macro';
 import Button from './Button';
+import Tree from '../assets/tree.svg';
 
 const Start = ({ props }) => {
   const startQuiz = () => props(true);
 
   return (
-    <Intro>
-      <h4>Mit der richtigen Lösung, kannst du bei uns gewinnen!</h4>
+    <StartQuiz>
+      <XmasTree src={Tree} alt="DME-Radio Xmas Tree" />
       <Button onClick={startQuiz}>Los geht's!</Button>
-    </Intro>
+    </StartQuiz>
   );
 };
 
-const Intro = styled.div`
-  margin-top: 1rem;
-  text-align: center;
+const StartQuiz = styled.div`
+  display: grid;
+  align-content: center;
+  justify-content: center;
+`;
+
+const XmasTree = styled.img`
+  width: 5rem;
+  margin: 0 auto;
+  :hover {
+    background: transparent;
+    box-shadow: 15px 0px 150px 12px rgba(255, 255, 255, 0.8),
+      0 0 40px 9px rgba(255, 253, 224, 0.7);
+    transition: all 1s ease-in-out;
+  }
 `;
 
 export default Start;

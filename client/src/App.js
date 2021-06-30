@@ -1,16 +1,13 @@
-
 import styled from 'styled-components/macro';
+import { Switch, Route } from 'react-router-dom';
+import { useState } from 'react';
+
 import HeaderNavigation from './components/HeaderNavigation';
 import Home from './pages/Home';
 import QuizForm from './pages/Quizform';
-import {Switch, Route} from 'react-router-dom';
-import { useEffect, useState } from 'react';
 import DMELogo from './assets/dme_logo.jpg';
 
-
 function App() {
- 
-  // const [quizs, setQuizs] = useState([]);
   const [users, setUsers] = useState([]);
 
   async function addUser(user) {
@@ -29,34 +26,32 @@ function App() {
     }
   }
 
-    return (
-      <div className="App">
-            <HeadWrapper>       
-            <a href="https://www.dm-entertainment.de/dme-radio">
-              <Logo src={DMELogo} alt="Back to DME-Radio Website" />
-            </a>
-              <HeaderNavigation />
-                <Switch>
-                  <Route exact path="/">
-                    <div>
-                      <Home />
-                    </div>
-                  </Route>
-                  <Route path="/Quizform">
-                    <div>
-                      <QuizForm onAddUser={addUser} />
-                    </div>
-                  </Route>
-                </Switch>
-              </HeadWrapper>
-      </div>
-    )
+  return (
+    <div className="App">
+      <HeadWrapper>
+        <a href="https://www.dm-entertainment.de/dme-radio">
+          <Logo src={DMELogo} alt="Back to DME-Radio Website" />
+        </a>
+        <HeaderNavigation />
+        <Switch>
+          <Route exact path="/">
+            <div>
+              <Home />
+            </div>
+          </Route>
+          <Route path="/Quizform">
+            <div>
+              <QuizForm onAddUser={addUser} />
+            </div>
+          </Route>
+        </Switch>
+      </HeadWrapper>
+    </div>
+  );
 }
 
-
-
 const HeadWrapper = styled.header`
-background: var(--primary);
+  background: var(--primary);
   display: grid;
   margin: 0.5rem;
   padding: 1.2rem;

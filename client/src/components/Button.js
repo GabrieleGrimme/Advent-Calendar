@@ -7,7 +7,8 @@ export const Button = styled.button`
   color: var(--third);
   cursor: pointer;
   font-weight: bolder;
-  font-size: 1.2.5rem;
+  font-size: 1.25rem;
+  margin-bottom: 0.5rem;
   padding: 0.4rem;
   :hover {
     background: transparent;

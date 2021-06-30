@@ -5,7 +5,6 @@ import cors from 'cors';
 import path from 'path';
 import dirname from './lib/pathHelpers.js';
 
-import quizRoutes from './routes/quiz.routes.js';
 import userRoutes from './routes/user.routes.js';
 
 const __dirname = dirname(import.meta.url);
@@ -13,7 +12,8 @@ const __dirname = dirname(import.meta.url);
 dotenv.config();
 
 const connectionString =
-  process.env.DB_CONNECTION || 'mongodb://localhost:27017/capstone-adventcalendar';
+  process.env.DB_CONNECTION ||
+  'mongodb://localhost:27017/capstone-adventcalendar';
 
 mongoose.connect(connectionString, {
   useNewUrlParser: true,
@@ -32,7 +32,6 @@ server.get('/health', (req, res) =>
   res.json({ message: 'Server is up and running!' })
 );
 
-server.use(quizRoutes);
 server.use(userRoutes);
 
 server.use(express.static(path.join(__dirname, '../client/build')));
