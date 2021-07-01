@@ -57,7 +57,7 @@ const Quiz = () => {
 };
 
 const QuizBox = styled.div`
-  background: linear-gradient(rgb(0, 0, 0), rgb(210, 68, 68));
+  background: linear-gradient(var(--primary), var(--third));
   border-radius: 0.5rem;
   font-family: 'Courier New', Courier, monospace;
   margin-top: 1rem;

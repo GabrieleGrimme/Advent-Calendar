@@ -21,7 +21,7 @@ export default function AdvCal() {
 
   return (
     <div>
-      <AdvCalBack>{showAdvCal}</AdvCalBack>
+      <AdvCalBackground>{showAdvCal}</AdvCalBackground>
       <AdventModal
         advDayContent={openedDoor}
         isOpen={open}
@@ -31,7 +31,7 @@ export default function AdvCal() {
   );
 }
 
-const AdvCalBack = styled.section`
+const AdvCalBackground = styled.section`
   background-size: auto;
   background: url(${CalBackground});
   border-radius: 0.5rem;
