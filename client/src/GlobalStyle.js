@@ -12,6 +12,12 @@ export default createGlobalStyle`
     --secondary: rgb(255, 255, 255); //white
     --third: rgb(210, 68, 68); // red
     --fourth: rgb(250, 220, 194); //nude
+
+    --reddish: rgba(210, 68, 68, 1) 0%; //gradient red transparent
+    --blackish: rgba(0, 0, 0, 0.8) 70%; //gradient black transparent
+
+    --shadowfirst: rgba(255, 255, 255, 0.8);
+    --shadowsecond: rgba(255, 253, 224, 0.7);
 }
 
 @media (min-width: 325px) {

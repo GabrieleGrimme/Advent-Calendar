@@ -13,8 +13,8 @@ export const Button = styled.button`
   :hover {
     background: transparent;
     border-radius: 5rem;
-    box-shadow: 15px 0px 150px 12px rgba(255, 255, 255, 0.8),
-      0 0 40px 9px rgba(255, 253, 224, 0.7);
+    box-shadow: 15px 0px 150px 12px var(--shadowfirst),
+      0 0 40px 9px var(--shadowsecond);
     color: var(--secondary);
     transition: all 1s ease-in-out;
   }
