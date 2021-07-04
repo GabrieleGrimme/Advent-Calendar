@@ -55,7 +55,7 @@ export default function EmailSubmitAfterQuiz({ onAddUser }) {
             onChange={updateUser}
             value={user.name}
           />
-          <Label htmlfor="vorname">Vorame: </Label>
+          <Label htmlfor="vorname">Vorname: </Label>
           <Input
             type="text"
             name="vorname"

@@ -1,7 +1,7 @@
 import styled from 'styled-components/macro';
 
 export const Button = styled.button`
-  background: none;
+  background: black;
   border: 1px solid var(--third);
   border-radius: 0.5rem;
   color: var(--third);

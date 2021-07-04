@@ -1,6 +1,44 @@
-# Getting Started with Create React App
+# Advent Calendar Quiz
+
+Digitales Gesellenstück as final project for neuefische web dev bootcamp
+
+![Advent Calendar Quiz](/assets/readme/.png)
+
+## `Description`
+
+The App is an advent calendar for a webradio as marketing tool. It has a quiz attached. The user can win some music stuff like CDs, fan merch etc. every day of advent. The user can answer a quiz question, send the answer to the radio and takes part in the advents lottery.
+
+![app images](src/images/readme/Screenshots.png)
+
+## `Tech Stack`
+
+- React
+- React Hooks
+- React Router
+- Styled-Components
+- Node.js
+- Database
+- mongoose
+- mongoDB
+- Multiple Choice Quiz API
+- Express
+- Axios
+- Adobe XD
+- Prop Types
+- Styleguidist
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+
+## `Project setup`
+
+1. Clone this repository.
+2. Install all npm dependencies
+
+   `npm install`
+
+3. To run the app in development mode npm start, then open http://localhost:3000 to view it in the browser
+4. To run Styleguidist (in client)
+   `npx styleguidist server`
 
 ## Available Scripts
 
