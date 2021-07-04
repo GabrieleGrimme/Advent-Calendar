@@ -1,10 +1,7 @@
 ```jsx
-import { BrowserRouter as Router
-} from 'react-router-dom';
-
-import styled from 'styled-components/macro';
+import { BrowserRouter as Router } from 'react-router-dom';
 
 <Router>
-    <HeaderNavigation />
+  <HeaderNavigation />
 </Router>;
 ```

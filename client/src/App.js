@@ -1,6 +1,6 @@
+import { useState } from 'react';
 import styled from 'styled-components/macro';
 import { Switch, Route } from 'react-router-dom';
-import { useState } from 'react';
 
 import HeaderNavigation from './components/HeaderNavigation';
 import Home from './pages/Home';

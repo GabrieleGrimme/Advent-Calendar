@@ -1,6 +1,5 @@
-import {NavLink} from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
 import styled from 'styled-components/macro';
-
 
 export default function HeaderNavigation() {
   return (
@@ -8,7 +7,7 @@ export default function HeaderNavigation() {
       <NavLinkStyled exact to="/" className="link">
         Adventskalender
       </NavLinkStyled>
-      <NavLinkStyled to="/Quizform" className="link">
+      <NavLinkStyled to="/Quiz" className="link">
         Gewinnspiel
       </NavLinkStyled>
     </Nav>

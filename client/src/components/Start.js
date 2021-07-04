@@ -22,11 +22,6 @@ const StartQuiz = styled.div`
 const XmasTreeStyled = styled(Tree)`
   width: 5rem;
   margin: 0 auto;
-
-  .active & path {
-    fill: var(--fifth);
-    stroke: none;
-  }
 `;
 
 export default Start;

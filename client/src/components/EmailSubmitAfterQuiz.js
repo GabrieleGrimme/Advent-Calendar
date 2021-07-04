@@ -16,6 +16,13 @@ export default function EmailSubmitAfterQuiz({ onAddUser }) {
   const [user, setUser] = useState(initialUser);
   const [isError, setIsError] = useState(false);
 
+  function updateUser(event) {
+    const fieldName = event.target.name;
+    let fieldValue = event.target.value;
+
+    setUser({ ...user, [fieldName]: fieldValue });
+  }
+
   function handleFormSubmit(event) {
     event.preventDefault();
     if (validateUser(user)) {
@@ -25,13 +32,6 @@ export default function EmailSubmitAfterQuiz({ onAddUser }) {
     } else {
       setIsError(true);
     }
-  }
-
-  function updateUser(event) {
-    const fieldName = event.target.name;
-    let fieldValue = event.target.value;
-
-    setUser({ ...user, [fieldName]: fieldValue });
   }
 
   return (
@@ -119,7 +119,7 @@ const Buttons = styled.section`
 `;
 
 const ErrorBox = styled.div`
-  border: 2.4px dotted red;
+  border: 2.4px dotted hotpink;
   border-radius: 0.5rem;
   display: grid;
   grid-template-columns: 0.5fr 3fr;

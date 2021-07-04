@@ -3,17 +3,17 @@ import styled from 'styled-components/macro';
 import axios from 'axios';
 import GameOver from './GameOver';
 
-const Quiz = () => {
+const Quiz = ({ onAddUser }) => {
   const [quiz, setQuiz] = useState([]);
   const [number, setNumber] = useState(0);
-  const [pts, setPts] = useState(0);
+  const [points, setPoints] = useState(0);
 
   const shuffle = (arr) => arr.sort(() => Math.random() - 0.5);
 
-  const pickAnswer = (e) => {
-    let userAnswer = e.target.outerText;
+  const pickAnswer = (event) => {
+    let userAnswer = event.target.outerText;
 
-    if (quiz[number].answer === userAnswer) setPts(pts + 1);
+    if (quiz[number].answer === userAnswer) setPoints(points + 1);
     setNumber(number + 1);
   };
 
@@ -51,13 +51,13 @@ const Quiz = () => {
           </Options>
         </>
       )}
-      {number === 3 && <GameOver pts={pts} />}
+      {number === 3 && <GameOver points={points} onAddUser={onAddUser} />}
     </QuizBox>
   );
 };
 
 const QuizBox = styled.div`
-  background: linear-gradient(rgb(0, 0, 0), rgb(210, 68, 68));
+  background: linear-gradient(var(--primary), var(--third));
   border-radius: 0.5rem;
   font-family: 'Courier New', Courier, monospace;
   margin-top: 1rem;

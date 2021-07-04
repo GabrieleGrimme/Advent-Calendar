@@ -37,16 +37,12 @@ const CloseButton = styled.button`
 `;
 
 const ModalStyle = styled.div`
-  background: radial-gradient(
-    circle,
-    rgba(210, 68, 68, 1) 0%,
-    rgba(0, 0, 0, 0.8) 70%
-  );
+  background: radial-gradient(circle, var(--reddish), var(--blackish));
   border: 1px solid var(--third);
   border-radius: 0.5rem;
   display: grid;
   max-height: 100%;
-  max-width: 100%;
+  max-width: 300px;
   place-items: center;
   padding: 0.5rem;
   position: fixed;
