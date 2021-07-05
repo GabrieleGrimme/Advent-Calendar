@@ -7,39 +7,37 @@ import Quiz from '../components/Quiz';
 
 export default function QuizInit({ onAddUser }) {
   const [start, setStart] = useState(false);
-  const [songs, setSongs] = useState([]);
-
-  useEffect(() => {
-    axios
-      .get('https://dme.ceedee71.de/short.php')
-      .then((res) => res.data)
-      .then((data) => {
-        setSongs({ songs: data });
-        console.log(songs);
-      });
-  }, []);
-
+  const [songs, setSongs] = useState({ __html: '' });
   const [seconds, setSeconds] = useState(1);
 
   useEffect(() => {
+    const fetchSongtitle = () => {
+      axios.get('https://dme.ceedee71.de/short.php').then((response) => {
+        setSongs({ __html: response.data });
+      });
+    };
     const timer = setInterval(() => {
+      fetchSongtitle();
       setSeconds(seconds + 1);
     }, 5000);
+    fetchSongtitle();
     return () => clearInterval(timer);
-  });
+  }, []);
 
   return (
     <div>
       <Wrapper>
         <main>
-          <FootNote>Soundsoviele {seconds} Sekunden!</FootNote>
+          <FootNote>
+            <span dangerouslySetInnerHTML={songs} />
+          </FootNote>
+
           <audio controls id="audioPlayer">
             <source
               src="https://server4.streamserver24.com:8080/proxy/darkmelo?mp=%2Fstream"
               type="audio/mpeg"
             />
           </audio>
-
           <QuizWrapper>
             <RadioTitle>
               DME-Radio einschalten, Quizfragen beantworten und tolle Preise
