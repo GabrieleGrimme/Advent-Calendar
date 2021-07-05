@@ -1,13 +1,13 @@
 # Advent Calendar App
 This is an advent calendar for a webradio as marketing tool. It has a quiz that the user can win some music stuff as CDs, fan merch etc. every day of advent. The user can answer a quiz question, send the answer to the radio and takes part in the advents lottery. 
 
-![Advent Calendar Quiz](./src/assets/readme/gabriele_grimme_adventcalendar.png)
+![Advent Calendar Quiz](./client/src/assets/readme/gabriele_grimme_adventcalendar.png)
 
 ## `Description`
 
 The App is an advent calendar for a webradio as marketing tool. It has a quiz attached. The user can win some music stuff like CDs, fan merch etc. every day of advent. The user can answer a quiz question, send the answer to the radio and takes part in the advents lottery.
 
-![app images](./src/assets/readme/gabriele_grimme_adventcalendarquiz.gif)
+![app images](./client/src/assets/readme/gabriele_grimme_adventcalendarquiz.gif)
 
 
 ## `Project setup`
